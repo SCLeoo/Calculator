@@ -1,0 +1,6 @@
+<section>
+  {{display}}
+</section>
+<section>
+  <button *ngFor="let item of calcData" (click)="executeMethod(item.method)">{{item.value}}</button>
+</section>

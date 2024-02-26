@@ -1,0 +1,62 @@
+[
+  {
+    "value": "9",
+    "method": "inputVal('9')"
+  },
+  {
+    "value": "8",
+    "method": "inputVal('8')"
+  },
+  {
+    "value": "7",
+    "method": "inputVal('7')"
+  },
+  {
+    "value": "6",
+    "method": "inputVal('6')"
+  },
+  {
+    "value": "5",
+    "method": "inputVal('5')"
+  },
+  {
+    "value": "4",
+    "method": "inputVal('4')"
+  },
+  {
+    "value": "3",
+    "method": "inputVal('3')"
+  },
+  {
+    "value": "2",
+    "method": "inputVal('2')"
+  },
+  {
+    "value": "1",
+    "method": "inputVal('1')"
+  },
+  {
+    "value": "0",
+    "method": "inputVal('0')"
+  },
+  {
+    "value": ".",
+    "method": "inputVal('.')"
+  },
+  {
+    "value": "+",
+    "method": "inputVal('+')"
+  },
+  {
+    "value": "-",
+    "method": "inputVal('-')"
+  },
+  {
+    "value": "AC",
+    "method": "clear()"
+  },
+  {
+    "value": "=",
+    "method": "solve()"
+  }
+]

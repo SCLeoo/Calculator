@@ -1,0 +1,35 @@
+<p>
+  This are two calculator components that share the information with a service, you will see the display duplicated.
+</p>
+<div>
+  <app-calc [calcData]="calcData1"></app-calc>
+  <br>
+  <app-calc [calcData]="calcData2"></app-calc>
+</div>
+<p>
+  As seen here we can take the advantage of the components to simplify the coding and encapsulating
+  the idea of the calculator component, we use the service to make the result available in other parts
+  of the application, in the case that we don't need the information in different parts of the applications
+  then we may avoid the use of the service and store all methods inside the component.
+</p>
+<p>
+  For the application to work as a data driven page, we need to make sure that the data that we receive is
+  compatible with the methods and the logic that we have in the frontend. For example, we receive the json
+  with the methods but they won't work unless we define those methods here in the frontend.
+</p>
+<hr>
+<p>
+  To make that example we use the same methods and the same data but we don't use the service.
+  Instead we 'hardcode' it inside this landing page of the calculator route.
+</p>
+<section>
+  {{displayVal}}
+</section>
+<section>
+  <button *ngFor="let item of calcData1" (click)="executeMethod(item.method)">{{item.value}}</button>
+</section>
+<p>
+  It is recommended to use the service or the component alone (depending of the scope of the information that will be handled)
+  to detach the logic of the component, when the data that we receive changes format
+  then we wouldn't have to update the global UI, but the service or individual component instead.
+</p>

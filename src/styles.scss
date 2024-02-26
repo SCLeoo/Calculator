@@ -1,1 +1,115 @@
-/* You can add global styles to this file, and also import other style files */
+// Font Families
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Arial', sans-serif;
+
+// Colors
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$accent-color: #e74c3c;
+
+// Standard Sizes
+$base-font-size: 16px;
+$small-margin: 8px;
+$medium-margin: 16px;
+$large-margin: 24px;
+
+// Apply Color Styles
+.primary-text {
+  color: $primary-color;
+}
+
+.secondary-text {
+  color: $secondary-color;
+}
+
+.accent-background {
+  background-color: $accent-color;
+}
+
+// Apply Margin Styles
+.margin-small {
+  margin: $small-margin;
+}
+
+.margin-medium {
+  margin: $medium-margin;
+}
+
+.margin-large {
+  margin: $large-margin;
+}
+
+$breakpoints: (
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px,
+  'xxlarge': 1400px,
+);
+
+// Font Sizes
+$font-sizes: (
+  'small': 14px,
+  'medium': 16px,
+  'large': 18px,
+  'xlarge': 20px,
+  'xxlarge': 22px,
+);
+
+// Mixin for media queries
+@mixin for-size($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown `#{$size}` in map.";
+  }
+}
+
+html{
+  background-color: #f5f5f5f5;
+}
+
+body {
+  // Default styles
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: $primary-font;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  // Styles for different screen sizes
+  @each $size, $font-size in $font-sizes {
+    @include for-size($size) {
+      font-size: $font-size;
+    }
+  }
+}
+
+main{
+  margin: 1rem;
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1rem;
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  background-color: $secondary-color;
+  a {
+    color: $primary-color;
+    text-decoration: none;
+  }
+}
