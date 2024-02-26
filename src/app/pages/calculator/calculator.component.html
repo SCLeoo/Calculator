@@ -22,12 +22,9 @@
   To make that example we use the same methods and the same data but we don't use the service.
   Instead we 'hardcode' it inside this landing page of the calculator route.
 </p>
-<section>
-  {{displayVal}}
-</section>
-<section>
-  <button *ngFor="let item of calcData1" (click)="executeMethod(item.method)">{{item.value}}</button>
-</section>
+<app-calc2 [calcData]="calcData1"></app-calc2>
+<br>
+<app-calc2 [calcData]="calcData2"></app-calc2>
 <p>
   It is recommended to use the service or the component alone (depending of the scope of the information that will be handled)
   to detach the logic of the component, when the data that we receive changes format

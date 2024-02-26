@@ -15,20 +15,9 @@ export class CalculatorComponent implements OnInit {
 
   constructor() { }
 
+  /**
+   * Hola
+   */
   ngOnInit(): void {
-  }
-
-  executeMethod(methodString: string) {
-    eval(`this.${methodString}`);
-  }
-  inputVal(val: string){
-    this.displayVal = this.displayVal + val;
-  }
-  clear(){
-    this.displayVal = '';
-  }
-  solve(){
-    if(this.displayVal === '') return;
-    this.displayVal = eval(this.displayVal);
   }
 }
